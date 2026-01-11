@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
-import type { IdentitySigner } from "@metaplex-foundation/js";
-import { token } from "@metaplex-foundation/js";
+import type { IdentitySigner } from "@trezoaplex-foundation/js";
+import { token } from "@trezoaplex-foundation/js";
 import { Box, Container, Stack, Typography, Button, List, ListItem } from "@mui/material";
-import { PublicKey, Transaction } from "@solana/web3.js";
-import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { useMetaplex } from "../hooks/useMetaplex";
+import { PublicKey, Transaction } from "@trezoa/web3.js";
+import { useConnection, useWallet } from "@trezoa/wallet-adapter-react";
+import { useTrezoaplex } from "../hooks/useTrezoaplex";
 import { toast } from "react-toastify";
-import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
+import { TOKEN_PROGRAM_ID } from "@trezoa/tpl-token";
 
 export const Setup: NextPage = () => {
     const wallet = useWallet();
     const { connection } = useConnection();
-    const { metaplex } = useMetaplex();
+    const { metaplex } = useTrezoaplex();
     const [collectionNFTMintAddress, setCollectionNFTMintAddress] = useState<PublicKey | undefined>(undefined);
 
     useEffect(() => {

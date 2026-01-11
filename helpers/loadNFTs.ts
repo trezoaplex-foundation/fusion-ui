@@ -1,9 +1,9 @@
-import { Metadata, Metaplex } from "@metaplex-foundation/js";
-import { WalletContextState } from "@solana/wallet-adapter-react";
+import { Metadata, Trezoaplex } from "@trezoaplex-foundation/js";
+import { WalletContextState } from "@trezoa/wallet-adapter-react";
 import { findTriflePda } from "./pdas";
 
 export const loadNFTs = async (
-  metaplex: Metaplex,
+  metaplex: Trezoaplex,
   wallet: WalletContextState,
 ) => {
   const lazyNfts = await metaplex.nfts().findAllByOwner({
@@ -18,7 +18,7 @@ export const loadNFTs = async (
   return await Promise.all(nftPromises);
 };
 
-export const loadTrifleNFTs = async (metaplex: Metaplex, wallet: WalletContextState) => {
+export const loadTrifleNFTs = async (metaplex: Trezoaplex, wallet: WalletContextState) => {
   const nfts = await loadNFTs(metaplex, wallet);
   let trifleNFTs = [];
   for (let i = 0; i < nfts.length; i++) {

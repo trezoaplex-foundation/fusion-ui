@@ -1,10 +1,10 @@
 import { createRef, useState, useEffect } from 'react';
 import { Typography, Box, TextField, Container, Stack, Button } from '@mui/material'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { PublicKey, Transaction } from '@solana/web3.js'
+import { useConnection, useWallet } from '@trezoa/wallet-adapter-react'
+import { PublicKey, Transaction } from '@trezoa/web3.js'
 import type { NextPage } from 'next'
 import { toast } from 'react-toastify';
-import { createCreateEscrowConstraintModelAccountInstruction, PROGRAM_ID } from '@metaplex-foundation/mpl-trifle/dist/src/generated'
+import { createCreateEscrowConstraintModelAccountInstruction, PROGRAM_ID } from '@trezoaplex-foundation/tpl-trifle/dist/src/generated'
 import { loadEscrowConstraintModels } from '../../helpers/loadEscrowConstraintModels';
 
 const Constraints: NextPage = () => {

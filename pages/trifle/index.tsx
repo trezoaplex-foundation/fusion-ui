@@ -2,18 +2,18 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { NextPage } from 'next'
 import { Button, Container, Typography, Stack, ImageList, ImageListItem, Select, MenuItem } from '@mui/material'
-import { useConnection, useWallet, WalletContextState } from '@solana/wallet-adapter-react';
-import { useMetaplex } from '../../hooks/useMetaplex';
-import { Metadata, Metaplex, Nft } from '@metaplex-foundation/js';
-import { AccountInfo, Keypair, PublicKey, SYSVAR_INSTRUCTIONS_PUBKEY, Transaction } from '@solana/web3.js';
-import { EscrowConstraintModel, createCreateTrifleAccountInstruction } from '@metaplex-foundation/mpl-trifle/dist/src/generated';
-import { getAssociatedTokenAddress } from '@solana/spl-token';
-import { TOKEN_PROGRAM_ID } from "@solana/spl-token"
+import { useConnection, useWallet, WalletContextState } from '@trezoa/wallet-adapter-react';
+import { useTrezoaplex } from '../../hooks/useTrezoaplex';
+import { Metadata, Trezoaplex, Nft } from '@trezoaplex-foundation/js';
+import { AccountInfo, Keypair, PublicKey, SYSVAR_INSTRUCTIONS_PUBKEY, Transaction } from '@trezoa/web3.js';
+import { EscrowConstraintModel, createCreateTrifleAccountInstruction } from '@trezoaplex-foundation/tpl-trifle/dist/src/generated';
+import { getAssociatedTokenAddress } from '@trezoa/tpl-token';
+import { TOKEN_PROGRAM_ID } from "@trezoa/tpl-token"
 import { findEscrowPda, findTriflePda } from '../../helpers/pdas';
 import { loadEscrowConstraintModels } from '../../helpers/loadEscrowConstraintModels';
 import { toast } from 'react-toastify';
 import { loadTrifleNFTs } from '../../helpers/loadNFTs';
-import { PROGRAM_ADDRESS as TOKEN_METADATA_PROGRAM_ID } from '@metaplex-foundation/mpl-token-metadata';
+import { PROGRAM_ADDRESS as TOKEN_METADATA_PROGRAM_ID } from '@trezoaplex-foundation/tpl-token-metadata';
 
 const METAPLEX_BUCKET = "Jf27xwhv6bH1aaPYtvJxvHvKRHoDe3DyQVqe4CJyxsP";
 
@@ -25,7 +25,7 @@ type EscrowConstraintModelWithPubkey = {
 const CreateTrifle: NextPage = () => {
     const wallet = useWallet();
     const { connection } = useConnection();
-    const { metaplex } = useMetaplex();
+    const { metaplex } = useTrezoaplex();
     const [allNFTs, setAllNFTs] = useState<any[]>([]);
     // selected to become the base token
     const [selectedNFT, setSelectedNFT] = useState<any>(null);

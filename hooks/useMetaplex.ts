@@ -1,21 +1,21 @@
-import { Metaplex } from "@metaplex-foundation/js";
+import { Trezoaplex } from "@trezoaplex-foundation/js";
 import { createContext, useContext } from "react";
-import { PROGRAM_ID } from "@metaplex-foundation/mpl-token-metadata";
+import { PROGRAM_ID } from "@trezoaplex-foundation/tpl-token-metadata";
 
 
-interface MetaplexContextInterface {
-  metaplex: Metaplex | null;
+interface TrezoaplexContextInterface {
+  metaplex: Trezoaplex | null;
 }
 
 const defaultContext = {
   metaplex: null,
 };
 
-export const MetaplexContext = createContext<MetaplexContextInterface>(
+export const TrezoaplexContext = createContext<TrezoaplexContextInterface>(
   defaultContext,
 );
 
-export function useMetaplex() {
-  let ctx = useContext(MetaplexContext);
+export function useTrezoaplex() {
+  let ctx = useContext(TrezoaplexContext);
   return ctx;
 }

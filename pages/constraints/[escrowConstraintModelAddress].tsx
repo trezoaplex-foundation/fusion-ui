@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { PublicKey, Transaction, SYSVAR_INSTRUCTIONS_PUBKEY } from "@solana/web3.js";
+import { PublicKey, Transaction, SYSVAR_INSTRUCTIONS_PUBKEY } from "@trezoa/web3.js";
 import { toast } from "react-toastify";
-import { useWallet, useConnection } from "@solana/wallet-adapter-react";
+import { useWallet, useConnection } from "@trezoa/wallet-adapter-react";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { Container, Typography, Stack, Button, List, ListItem } from "@mui/material";
-import { EscrowConstraintModel, EscrowConstraint, createAddNoneConstraintToEscrowConstraintModelInstruction, createAddCollectionConstraintToEscrowConstraintModelInstruction, createAddTokensConstraintToEscrowConstraintModelInstruction } from "@metaplex-foundation/mpl-trifle/dist/src/generated";
+import { EscrowConstraintModel, EscrowConstraint, createAddNoneConstraintToEscrowConstraintModelInstruction, createAddCollectionConstraintToEscrowConstraintModelInstruction, createAddTokensConstraintToEscrowConstraintModelInstruction } from "@trezoaplex-foundation/tpl-trifle/dist/src/generated";
 import { EscrowConstraintForm } from "../../components/EscrowConstraintForm";
 import { ConstraintType } from "../../helpers/constraintType";
-import { findMetadataPda } from "@metaplex-foundation/js";
+import { findMetadataPda } from "@trezoaplex-foundation/js";
 
 const ConstraintDetail: NextPage = () => {
     const router = useRouter();

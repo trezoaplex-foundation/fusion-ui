@@ -1,11 +1,11 @@
 import { Provider, useMemo, FC } from 'react';
-import { useWallet, useConnection } from '@solana/wallet-adapter-react';
-import { Metaplex, walletAdapterIdentity } from "@metaplex-foundation/js";
-import { MetaplexContext } from '../hooks/useMetaplex';
+import { useWallet, useConnection } from '@trezoa/wallet-adapter-react';
+import { Trezoaplex, walletAdapterIdentity } from "@trezoaplex-foundation/js";
+import { TrezoaplexContext } from '../hooks/useTrezoaplex';
 
-interface MetaplexProviderProps { children: React.ReactNode }
+interface TrezoaplexProviderProps { children: React.ReactNode }
 
-export const MetaplexProvider: FC<MetaplexProviderProps> = ({ children }) => {
+export const TrezoaplexProvider: FC<TrezoaplexProviderProps> = ({ children }) => {
     const { connection } = useConnection();
     const wallet = useWallet();
 
@@ -14,14 +14,14 @@ export const MetaplexProvider: FC<MetaplexProviderProps> = ({ children }) => {
             console.error("wallet not connected");
             return null;
         }
-        return Metaplex.make(connection).use(
+        return Trezoaplex.make(connection).use(
             walletAdapterIdentity(wallet),
         );
     }, [connection, wallet]);
 
     return (
-        <MetaplexContext.Provider value={{ metaplex }}>
+        <TrezoaplexContext.Provider value={{ metaplex }}>
             {children}
-        </MetaplexContext.Provider>
+        </TrezoaplexContext.Provider>
     );
 };

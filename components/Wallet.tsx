@@ -1,16 +1,16 @@
 import { FC, useMemo } from 'react';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { ConnectionProvider, WalletProvider } from '@trezoa/wallet-adapter-react';
+import { WalletAdapterNetwork } from '@trezoa/wallet-adapter-base';
+import { PhantomWalletAdapter } from '@trezoa/wallet-adapter-wallets';
 import {
     WalletModalProvider,
     WalletDisconnectButton,
     WalletMultiButton
-} from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
+} from '@trezoa/wallet-adapter-react-ui';
+import { clusterApiUrl } from '@trezoa/web3.js';
 
 // Default styles that can be overridden by your app
-require('@solana/wallet-adapter-react-ui/styles.css');
+require('@trezoa/wallet-adapter-react-ui/styles.css');
 
 type Props = {
     children: React.ReactNode;
@@ -23,7 +23,7 @@ export const Wallet: FC<Props> = ({ children }) => {
     // // You can also provide a custom RPC endpoint.
     // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-    const endpoint = "https://wispy-proud-butterfly.solana-devnet.quiknode.pro/47f7e86096c0fc7c3f2ecd30b0db25652df6e672/"
+    const endpoint = "https://wispy-proud-butterfly.trezoa-devnet.quiknode.pro/47f7e86096c0fc7c3f2ecd30b0db25652df6e672/"
 
     const wallets = useMemo(
         () => [

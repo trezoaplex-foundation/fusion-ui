@@ -1,8 +1,8 @@
-import { Connection, PublicKey } from "@solana/web3.js";
+import { Connection, PublicKey } from "@trezoa/web3.js";
 import {
   EscrowConstraintModel,
   PROGRAM_ADDRESS,
-} from "@metaplex-foundation/mpl-trifle/dist/src/generated";
+} from "@trezoaplex-foundation/tpl-trifle/dist/src/generated";
 
 export const loadEscrowConstraintModels = async (
   publicKey: PublicKey,

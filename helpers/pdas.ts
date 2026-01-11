@@ -1,6 +1,6 @@
-import { PublicKey } from "@solana/web3.js";
-import { PROGRAM_ADDRESS } from "@metaplex-foundation/mpl-trifle/dist/src/generated";
-import { PROGRAM_ADDRESS as TOKEN_METADATA_PROGRAM_ADDRESS } from "@metaplex-foundation/mpl-token-metadata";
+import { PublicKey } from "@trezoa/web3.js";
+import { PROGRAM_ADDRESS } from "@trezoaplex-foundation/tpl-trifle/dist/src/generated";
+import { PROGRAM_ADDRESS as TOKEN_METADATA_PROGRAM_ADDRESS } from "@trezoaplex-foundation/tpl-token-metadata";
 
 export const findTriflePda = async (
   mint: PublicKey,
