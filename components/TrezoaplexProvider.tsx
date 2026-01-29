@@ -9,7 +9,7 @@ export const TrezoaplexProvider: FC<TrezoaplexProviderProps> = ({ children }) =>
     const { connection } = useConnection();
     const wallet = useWallet();
 
-    const metaplex = useMemo(() => {
+    const trezoaplex = useMemo(() => {
         if (!wallet) {
             console.error("wallet not connected");
             return null;
@@ -20,7 +20,7 @@ export const TrezoaplexProvider: FC<TrezoaplexProviderProps> = ({ children }) =>
     }, [connection, wallet]);
 
     return (
-        <TrezoaplexContext.Provider value={{ metaplex }}>
+        <TrezoaplexContext.Provider value={{ trezoaplex }}>
             {children}
         </TrezoaplexContext.Provider>
     );

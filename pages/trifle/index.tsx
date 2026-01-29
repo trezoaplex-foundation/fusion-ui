@@ -25,7 +25,7 @@ type EscrowConstraintModelWithPubkey = {
 const CreateTrifle: NextPage = () => {
     const wallet = useWallet();
     const { connection } = useConnection();
-    const { metaplex } = useTrezoaplex();
+    const { trezoaplex } = useTrezoaplex();
     const [allNFTs, setAllNFTs] = useState<any[]>([]);
     // selected to become the base token
     const [selectedNFT, setSelectedNFT] = useState<any>(null);
@@ -36,23 +36,23 @@ const CreateTrifle: NextPage = () => {
         if (!wallet.publicKey) {
             return;
         }
-        if (!metaplex) {
+        if (!trezoaplex) {
             return;
         }
 
-        loadTrifleNFTs(metaplex, wallet).then((nfts) => {
+        loadTrifleNFTs(trezoaplex, wallet).then((nfts) => {
             setAllNFTs(nfts)
         })
 
         loadEscrowConstraintModels(wallet.publicKey, connection).then(models => {
             setEscrowConstraintModels(models)
         });
-    }, [wallet.publicKey, metaplex, wallet, connection])
+    }, [wallet.publicKey, trezoaplex, wallet, connection])
 
 
     const handleNFTClick = (nft: Metadata) => {
         console.log(nft);
-        metaplex?.nfts().load({ metadata: nft }).then((loadedNFT: any) => {
+        trezoaplex?.nfts().load({ metadata: nft }).then((loadedNFT: any) => {
             console.log({ loadedNFT });
             setSelectedNFT(loadedNFT);
         });
@@ -112,7 +112,7 @@ const CreateTrifle: NextPage = () => {
         let trifleAddress = await findTriflePda(nftMint.publicKey, updateAuthority);
         let result;
         try {
-            result = await metaplex!.nfts().create({
+            result = await trezoaplex!.nfts().create({
                 uri: "https://shdw-drive.genesysgo.net/" + METAPLEX_BUCKET + "/" + trifleAddress[0].toString() + ".json",
                 name: "test base  ",
                 sellerFeeBasisPoints: 0,

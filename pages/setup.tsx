@@ -12,7 +12,7 @@ import { TOKEN_PROGRAM_ID } from "@trezoa/tpl-token";
 export const Setup: NextPage = () => {
     const wallet = useWallet();
     const { connection } = useConnection();
-    const { metaplex } = useTrezoaplex();
+    const { trezoaplex } = useTrezoaplex();
     const [collectionNFTMintAddress, setCollectionNFTMintAddress] = useState<PublicKey | undefined>(undefined);
 
     useEffect(() => {
@@ -31,12 +31,12 @@ export const Setup: NextPage = () => {
             return;
         }
 
-        if (!metaplex) {
-            toast.error("metaplex not initialized");
+        if (!trezoaplex) {
+            toast.error("trezoaplex not initialized");
             return;
         }
 
-        await metaplex
+        await trezoaplex
             .nfts()
             .createSft({
                 uri: "https://shdw-drive.genesysgo.net/G6yhKwkApJr1YCCmrusFibbsvrXZa4Q3GRThSHFiRJQW/Chain.json",
@@ -46,7 +46,7 @@ export const Setup: NextPage = () => {
                 tokenAmount: token(1),
             });
 
-        await metaplex
+        await trezoaplex
             .nfts()
             .createSft({
                 uri: "https://shdw-drive.genesysgo.net/G6yhKwkApJr1YCCmrusFibbsvrXZa4Q3GRThSHFiRJQW/Dragon_Breath.json",
@@ -56,7 +56,7 @@ export const Setup: NextPage = () => {
                 tokenAmount: token(1),
             });
 
-        await metaplex
+        await trezoaplex
             .nfts()
             .createSft({
                 uri: "https://shdw-drive.genesysgo.net/G6yhKwkApJr1YCCmrusFibbsvrXZa4Q3GRThSHFiRJQW/Piercing.json",
@@ -66,7 +66,7 @@ export const Setup: NextPage = () => {
                 tokenAmount: token(1),
             });
 
-        await metaplex
+        await trezoaplex
             .nfts()
             .createSft({
                 uri: "https://shdw-drive.genesysgo.net/G6yhKwkApJr1YCCmrusFibbsvrXZa4Q3GRThSHFiRJQW/Base.json",
@@ -78,7 +78,7 @@ export const Setup: NextPage = () => {
 
 
         // // the base token
-        // await metaplex.nfts().create({
+        // await trezoaplex.nfts().create({
         //     uri: "https://shdw-drive.genesysgo.net/G6yhKwkApJr1YCCmrusFibbsvrXZa4Q3GRThSHFiRJQW/Combined.json",
         //     name: "Test Dino",
         //     sellerFeeBasisPoints: 500, // Represents 5.00%.
@@ -88,7 +88,7 @@ export const Setup: NextPage = () => {
     }
 
     const setupCollectionNFT = async () => {
-        const result = await metaplex!.nfts().create({
+        const result = await trezoaplex!.nfts().create({
             uri: "https://shdw-drive.genesysgo.net/G6yhKwkApJr1YCCmrusFibbsvrXZa4Q3GRThSHFiRJQW/Collection.json",
             name: "test collection  ",
             sellerFeeBasisPoints: 0,

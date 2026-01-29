@@ -17,7 +17,7 @@ const TrifleDetail: NextPage = () => {
     const router = useRouter();
     const wallet = useWallet();
     const { connection } = useConnection();
-    const { metaplex } = useTrezoaplex();
+    const { trezoaplex } = useTrezoaplex();
     const [trifle, setTrifle] = useState<Trifle | null>(null);
     const [escrowConstraintModel, setEscrowConstraintModel] = useState<EscrowConstraintModel | null>(null);
     const [escrow, setEscrow] = useState<TokenOwnedEscrow | null>(null);
@@ -39,13 +39,13 @@ const TrifleDetail: NextPage = () => {
         if (!trifleAddressString) {
             return;
         }
-        if (!metaplex) {
+        if (!trezoaplex) {
             return;
         }
 
         load().then(() => clearInterval(interval));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [trifleAddressString, metaplex, wallet.publicKey, time]);
+    }, [trifleAddressString, trezoaplex, wallet.publicKey, time]);
 
     const load = async () => {
         console.log(trifleAddressString);
@@ -64,11 +64,11 @@ const TrifleDetail: NextPage = () => {
         setSlots(slots);
 
         // load the base token nft data
-        let baseToken = await metaplex!.nfts().findByMint({ mintAddress: escrow!.baseToken });
+        let baseToken = await trezoaplex!.nfts().findByMint({ mintAddress: escrow!.baseToken });
         console.log(baseToken.address.toString());
         setBaseToken(baseToken as Nft);
 
-        const nfts = await loadNFTs(metaplex!, wallet);
+        const nfts = await loadNFTs(trezoaplex!, wallet);
 
         setAllNFTs(nfts.filter((nft: any) => nft.address.toBase58() !== escrow!.baseToken.toBase58()));
 

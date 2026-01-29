@@ -4,11 +4,11 @@ import { PROGRAM_ID } from "@trezoaplex-foundation/tpl-token-metadata";
 
 
 interface TrezoaplexContextInterface {
-  metaplex: Trezoaplex | null;
+  trezoaplex: Trezoaplex | null;
 }
 
 const defaultContext = {
-  metaplex: null,
+  trezoaplex: null,
 };
 
 export const TrezoaplexContext = createContext<TrezoaplexContextInterface>(
