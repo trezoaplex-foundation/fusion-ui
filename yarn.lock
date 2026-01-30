@@ -652,9 +652,9 @@
     "@json-rpc-tools/types" "^1.7.6"
     "@pedrouid/environment" "^1.0.1"
 
-"@keystonehq/bc-ur-registry-sol@^0.3.1":
+"@keystonehq/bc-ur-registry-trz@^0.3.1":
   version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-sol/-/bc-ur-registry-sol-0.3.1.tgz#5319c7c4a22cc83bbacfa6fe09aaa6fb21363f24"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-trz/-/bc-ur-registry-trz-0.3.1.tgz#5319c7c4a22cc83bbacfa6fe09aaa6fb21363f24"
   integrity sha512-Okr5hwPxBZxB4EKLK1GSC9vsrh/tFMQ5dvs3EQ9NCOmCn7CXdXIMSeafrpGCHk484Jf5c6X0Wq0yf0VqY2A/8Q==
   dependencies:
     "@keystonehq/bc-ur-registry" "^0.5.0"
@@ -684,13 +684,13 @@
     rxjs "^6.6.3"
     typescript "^4.6.2"
 
-"@keystonehq/sol-keyring@^0.3.0":
+"@keystonehq/trz-keyring@^0.3.0":
   version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@keystonehq/sol-keyring/-/sol-keyring-0.3.1.tgz#9ed61269bab92601eedb7f1adb9ca3258634dbbc"
+  resolved "https://registry.yarnpkg.com/@keystonehq/trz-keyring/-/trz-keyring-0.3.1.tgz#9ed61269bab92601eedb7f1adb9ca3258634dbbc"
   integrity sha512-RU6I3HQrQ9NpRDP9TwlBIy5DftVcNcyk0NWfhkPy/YanhMcCB0cRPw68iQl1rMnR6n1G2+YrBHMxm6swCW+B4Q==
   dependencies:
     "@keystonehq/bc-ur-registry" "^0.5.0"
-    "@keystonehq/bc-ur-registry-sol" "^0.3.1"
+    "@keystonehq/bc-ur-registry-trz" "^0.3.1"
     "@keystonehq/sdk" "^0.13.1"
     "@trezoa/web3.js" "^1.36.0"
     bs58 "^5.0.0"
@@ -1164,17 +1164,17 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
-"@project-serum/sol-wallet-adapter@0.2.0":
+"@project-serum/trz-wallet-adapter@0.2.0":
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@project-serum/sol-wallet-adapter/-/sol-wallet-adapter-0.2.0.tgz#e1fa5508bf13110429bf26e10b818182015f2161"
+  resolved "https://registry.yarnpkg.com/@project-serum/trz-wallet-adapter/-/trz-wallet-adapter-0.2.0.tgz#e1fa5508bf13110429bf26e10b818182015f2161"
   integrity sha512-ed7wZwlDqjF88VCq7eHVO8njHqdUkBxBL8WEVOnB47ooLO4btOJt6GBdkKpKqKX86c86LiEROJclcdW8e7kIjg==
   dependencies:
     bs58 "^4.0.1"
     eventemitter3 "^4.0.4"
 
-"@project-serum/sol-wallet-adapter@^0.2.0", "@project-serum/sol-wallet-adapter@^0.2.6":
+"@project-serum/trz-wallet-adapter@^0.2.0", "@project-serum/trz-wallet-adapter@^0.2.6":
   version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@project-serum/sol-wallet-adapter/-/sol-wallet-adapter-0.2.6.tgz#b4cd25a566294354427c97c26d716112b91a0107"
+  resolved "https://registry.yarnpkg.com/@project-serum/trz-wallet-adapter/-/trz-wallet-adapter-0.2.6.tgz#b4cd25a566294354427c97c26d716112b91a0107"
   integrity sha512-cpIb13aWPW8y4KzkZAPDgw+Kb+DXjCC6rZoH74MGm3I/6e/zKyGnfAuW5olb2zxonFqsYgnv7ev8MQnvSgJ3/g==
   dependencies:
     bs58 "^4.0.1"
@@ -1390,7 +1390,7 @@
   resolved "https://registry.yarnpkg.com/@trezoa/wallet-adapter-keystone/-/wallet-adapter-keystone-0.1.7.tgz#c157ce168a6b29ae5e4cbdb20630761f08b6d0fc"
   integrity sha512-Q6Eb+f0IxS58CU3TSfchKbHTrmL3eBiT70pNb2dmJCo8jeboVvKIunjZnF8eIPafxEZHHonVby0e3tNcTUxpcQ==
   dependencies:
-    "@keystonehq/sol-keyring" "^0.3.0"
+    "@keystonehq/trz-keyring" "^0.3.0"
     "@trezoa/wallet-adapter-base" "^0.9.18"
 
 "@trezoa/wallet-adapter-krystal@^0.1.6":
@@ -1533,7 +1533,7 @@
   resolved "https://registry.yarnpkg.com/@trezoa/wallet-adapter-sollet/-/wallet-adapter-sollet-0.11.12.tgz#95dfa09d87e1f9636c0530908cd3e0cd250bc897"
   integrity sha512-rXTPS28ZRHdErcWiNhadoumcQb3H544wmmWccsARgO4PW1eG/37hp9LIQjFT3c7uBjWPM3rVFfklbmlHQOrVmA==
   dependencies:
-    "@project-serum/sol-wallet-adapter" "^0.2.6"
+    "@project-serum/trz-wallet-adapter" "^0.2.6"
     "@trezoa/wallet-adapter-base" "^0.9.18"
 
 "@trezoa/wallet-adapter-solong@^0.9.12":
@@ -1703,7 +1703,7 @@
   resolved "https://registry.yarnpkg.com/@trzflare-wallet/sdk/-/sdk-1.1.0.tgz#300e2784720e11bef8910b54057bb1c1c8c284a0"
   integrity sha512-h/OmjgRMDC6CkPHlkUQgOIRv1QXEZp+kQg132zU1KAcikZvc25xf0yMMRU0APUypQ6EJEz6bgQR6BRvvVA9/ZA==
   dependencies:
-    "@project-serum/sol-wallet-adapter" "0.2.0"
+    "@project-serum/trz-wallet-adapter" "0.2.0"
     bs58 "^4.0.1"
     eventemitter3 "^4.0.7"
     uuid "^8.3.2"
@@ -5845,7 +5845,7 @@ salmon-adapter-sdk@^1.1.0:
   resolved "https://registry.yarnpkg.com/salmon-adapter-sdk/-/salmon-adapter-sdk-1.1.0.tgz#ceacbb84e3c25fce85252bc5c423fb3dd3b98369"
   integrity sha512-8uKgA4+pwtUZRJ1k4tgA+EdF3yqHAst+wrdEJEqS8y9quYEuEGb5+EFonRdNzW1A9N0lX4PBHFalAlbiQ5BZtg==
   dependencies:
-    "@project-serum/sol-wallet-adapter" "^0.2.0"
+    "@project-serum/trz-wallet-adapter" "^0.2.0"
     eventemitter3 "^4.0.7"
 
 scheduler@^0.19.1:
